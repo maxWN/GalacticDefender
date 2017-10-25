@@ -1,0 +1,18 @@
+﻿/*
+*   Author - Max W. Nakel
+*   Date - 4/20/2016
+*/
+
+body {
+    background-image: linear-gradient(#808080, #00ffff);
+    padding: 200px;
+}
+
+#object {
+    margin-left: auto;
+    margin-right: auto;
+    left: 100px;
+    top: 5%;
+    position: absolute;
+    font-family: 'Segoe UI', sans-serif;
+}
