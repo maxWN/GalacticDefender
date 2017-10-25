@@ -22,6 +22,7 @@ var FinalFrontier;
             this.game.load.image('health', '/Graphics/recovery.png');
             this.game.load.image('rockets', '/Graphics/rockets.png');
         };
+        //This will take our preloaded data, and create a state
         LevelOne.prototype.create = function () {
         };
         return LevelOne;
