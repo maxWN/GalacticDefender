@@ -56,7 +56,7 @@ module FinalFrontier {
             set2.anchor.setTo(0.5, 0.5);
 
             var title_track = this.game.add.audio('title_music');
-            title_track.volume = 100;
+            title_track.volume = 80;
             title_track.loop = true;
             title_track.play();
 
