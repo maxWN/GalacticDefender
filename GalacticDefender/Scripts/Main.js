@@ -45,4 +45,3 @@ var BeginState = {
 game.state.add('BeginState', BeginState);
 game.state.start('BeginState');
 
-//when people are really fake, my response is always: how can I get away with murder...?
