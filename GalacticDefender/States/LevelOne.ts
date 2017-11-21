@@ -23,11 +23,13 @@ module FinalFrontier {
         }
 
         //This will take our preloaded data, and create a state
-        create()
-        {
+        create() {
 
         }
 
+        update() {
+
+        }
 
     }
 
