@@ -6,10 +6,9 @@ var FinalFrontier;
 (function (FinalFrontier) {
     var MainState = (function () {
         function MainState() {
-            this.game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object', { preload: this.preload, create: this.create });
+            this.beginState = { preload: this.preload, create: this.create, update: this.update() };
+            this.game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object', this.beginState);
         }
-        //var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object');
-        //var BeginState = {
         MainState.prototype.GameObjectsAlias = function (x) {
             var y = x;
             function ReturnAlias() {
@@ -32,26 +31,29 @@ var FinalFrontier;
             this.game.load.image('game_title', '/Graphics/game_title.png');
         };
         MainState.prototype.create = function () {
-            var fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
-            this.x = fixture;
-            //this.GameObjectsAlias(fixture);
-            var set = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
-            set.anchor.setTo(0, 2);
-            var set2 = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'game_title');
-            set2.anchor.setTo(0.5, 0.5);
-            var title_track = this.game.add.audio('title_music');
-            title_track.volume = 100;
-            title_track.loop = true;
-            title_track.play();
+            //var fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
+            //this.x = fixture;
+            ////this.GameObjectsAlias(fixture);
+            //var set = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
+            //set.anchor.setTo(0, 2);
+            //var set2 = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'game_title');
+            //set2.anchor.setTo(0.5, 0.5);
+            //var title_track = this.game.add.audio('title_music');
+            //title_track.volume = 100;
+            //title_track.loop = true;
+            //title_track.play();
+            this.game.state.add('MenuState', MenuState.MainMenuState, true);
+            //this.game.state.start;
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         };
         MainState.prototype.update = function () {
-            //var z = this.ReturnAlias();
-            //this.fixture.tilePosition.y += 2;
-            this.x.tilePosition.y += 2;
         };
         return MainState;
     }());
     FinalFrontier.MainState = MainState;
 })(FinalFrontier || (FinalFrontier = {}));
+//loads game class ('MainState') from browser
+window.onload = function () {
+    var game = new FinalFrontier.MainState();
+};
 //# sourceMappingURL=MainState.js.map

@@ -6,15 +6,11 @@
 module FinalFrontier {
     export class MainState {
 
-        game: Phaser.Game;
+        public game: Phaser.Game;
 
         constructor() {
-            this.game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object', { preload: this.preload, create: this.create });
+            this.game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object', this.beginState);
         }
-
-    //var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'object');
-
-    //var BeginState = {
 
         GameObjectsAlias(x) {
             var y = x;
@@ -23,9 +19,9 @@ module FinalFrontier {
             }
         } 
 
-        x: any;
+        public x: any;
         
-        preload() {
+        public preload(): void {
             //Load all of our assets before the game starts
 
             //Graphics
@@ -44,34 +40,43 @@ module FinalFrontier {
             this.game.load.image('game_title', '/Graphics/game_title.png');
         }
 
-        create() { //create states
-            var fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
-            this.x = fixture;
-            //this.GameObjectsAlias(fixture);
+        public create(): void { //create states
+            //var fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
+            //this.x = fixture;
+            ////this.GameObjectsAlias(fixture);
 
-            var set = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
-            set.anchor.setTo(0, 2);
+            //var set = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
+            //set.anchor.setTo(0, 2);
 
-            var set2 = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'game_title');
-            set2.anchor.setTo(0.5, 0.5);
+            //var set2 = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'game_title');
+            //set2.anchor.setTo(0.5, 0.5);
 
-            var title_track = this.game.add.audio('title_music');
-            title_track.volume = 100;
-            title_track.loop = true;
-            title_track.play();
+            //var title_track = this.game.add.audio('title_music');
+            //title_track.volume = 100;
+            //title_track.loop = true;
+            //title_track.play();
+
+            this.game.state.add('MenuState', MenuState.MainMenuState, true);
+            //this.game.state.start;
 
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
 
-        update() {
-            //var z = this.ReturnAlias();
-            //this.fixture.tilePosition.y += 2;
-            this.x.tilePosition.y += 2;
+        public update(): void {
         }
 
-        //game.state.add('BeginState', BeginState);
-        //game.state.start('BeginState');
+        public beginState = { preload: this.preload, create: this.create, update: this.update()};
+
+        //public begin() {
+        //    this.game.state.add('BeginState', this.beginState);
+        //    this.game.state.start;
+        //}
 
     }
 
 }
+
+//loads game class ('MainState') from browser
+window.onload = () => {
+    var game = new FinalFrontier.MainState();
+};
