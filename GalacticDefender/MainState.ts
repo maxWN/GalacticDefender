@@ -38,23 +38,11 @@ module FinalFrontier {
             this.game.load.image('health', '/Graphics/recovery.png');
             this.game.load.image('rockets', '/Graphics/rockets.png');
             this.game.load.image('game_title', '/Graphics/game_title.png');
+            this.game.load.image('start_message', '/Graphics/start_message.png');
         }
 
-        public create(): void { //create states
-            //var fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
-            //this.x = fixture;
-            ////this.GameObjectsAlias(fixture);
-
-            //var set = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
-            //set.anchor.setTo(0, 2);
-
-            //var set2 = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'game_title');
-            //set2.anchor.setTo(0.5, 0.5);
-
-            //var title_track = this.game.add.audio('title_music');
-            //title_track.volume = 100;
-            //title_track.loop = true;
-            //title_track.play();
+        public create(): void {
+             //create states
 
             this.game.state.add('MenuState', MenuState.MainMenuState, true);
             //this.game.state.start;
