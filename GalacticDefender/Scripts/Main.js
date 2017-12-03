@@ -10,7 +10,7 @@ var BeginState = {
         //Graphics
         game.load.image('background', '/Graphics/space.png');
         //Music
-        game.load.audio('title_music', '/Music/02 Paranoid Android.mp3');
+        //game.load.audio('title_music', '/Music/02 Paranoid Android.mp3');
         //Sprites
         game.load.image('player_one', '/Graphics/redRazor.png');
         game.load.image('commonE', '/Graphics/scytharWarship.png');
@@ -29,10 +29,10 @@ var BeginState = {
         this.title = game.add.sprite(game.world.centerX, game.world.centerY, 'game_title');
         this.title.anchor.setTo(0.5, 0.5);
 
-        this.titleTrack = game.add.audio('title_music');
-        this.titleTrack.volume = 100;
-        this.titleTrack.loop = true;
-        this.titleTrack.play();
+        //this.titleTrack = game.add.audio('title_music');
+        //this.titleTrack.volume = 100;
+        //this.titleTrack.loop = true;
+        //this.titleTrack.play();
 
         game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
     },
