@@ -14,16 +14,10 @@ var FirstLevel;
         function LevelOne() {
             _super.call(this);
         }
-        //preload() {
-        //    this.game.load.image('player_one', '/Graphics/redRazor.png');
-        //    this.game.load.image('commonE', '/Graphics/scytharWarship.png');
-        //    this.game.load.image('user_main_weapon', '/Graphics/phasers.png');
-        //    this.game.load.image('commonW', '/Graphics/plasmaBolts.png');
-        //    this.game.load.image('health', '/Graphics/recovery.png');
-        //    this.game.load.image('rockets', '/Graphics/rockets.png');
-        //}
         LevelOne.prototype.create = function () {
             this.fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
+            this.player_one = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
+            this.player_one.anchor.setTo(.5, -2);
         };
         return LevelOne;
     }(Phaser.State));

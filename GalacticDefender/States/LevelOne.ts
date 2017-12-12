@@ -9,26 +9,19 @@ module FirstLevel {
 
         //class variables
         public fixture: Phaser.TileSprite;
-
+        public player_one: Phaser.Sprite;
 
         constructor() {
             super();
         }
 
-        //preload() {
-
-        //    this.game.load.image('player_one', '/Graphics/redRazor.png');
-        //    this.game.load.image('commonE', '/Graphics/scytharWarship.png');
-        //    this.game.load.image('user_main_weapon', '/Graphics/phasers.png');
-        //    this.game.load.image('commonW', '/Graphics/plasmaBolts.png');
-        //    this.game.load.image('health', '/Graphics/recovery.png');
-        //    this.game.load.image('rockets', '/Graphics/rockets.png');
-
-        //}
-
         public create(): void
         {
             this.fixture = this.game.add.tileSprite(0, 0, 800, 600, 'background');
+
+            this.player_one = this.game.add.sprite(this.game.world.centerX, this.game.world.centerY, 'player_one');
+            this.player_one.anchor.setTo(.5, -2);
+
         }
 
 

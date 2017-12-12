@@ -22,9 +22,7 @@ module FinalFrontier {
                 return x;
             }
         } 
-
-        public x: any;
-        
+      
         public preload(): void {
             //Load all of our assets before the game starts
 

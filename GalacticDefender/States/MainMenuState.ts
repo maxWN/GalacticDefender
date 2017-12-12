@@ -22,7 +22,6 @@ module MenuState {
         constructor()
         {
             super();
-
         }
 
         public create(): void
