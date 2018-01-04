@@ -1,4 +1,4 @@
-# GalacticDefender
+# GalacticDefender :space_invader:
 
 ## Summary
 This project is my first foray into game development. The overall goal is to create something with the Phaser Framework that is fun,
